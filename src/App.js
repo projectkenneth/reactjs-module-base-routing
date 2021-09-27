@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 import Home from './Home';
-import DraftListing from './DraftManagement/DraftListing';
-import DraftUpdate from './DraftManagement/DraftUpdate';
-import PostListing from './PostManagement/PostListing';
-import PostUpdate from './PostManagement/PostUpdate';
+import DraftRouter from './DraftManagement/DraftRouter';
+import PostRouter from './PostManagement/PostRouter';
 
 function App() {
   return (
@@ -19,10 +17,8 @@ function App() {
         </nav>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/drafts' component={DraftListing} />
-          <Route path='/drafts/:draftId' component={DraftUpdate} />
-          <Route exact path='/posts' component={PostListing} />
-          <Route path='/posts/:postId' component={PostUpdate} />
+          <Route path='/drafts' component={DraftRouter} />
+          <Route path='/posts' component={PostRouter} />
         </Switch>
       </BrowserRouter>
     </div>
